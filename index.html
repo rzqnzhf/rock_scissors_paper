@@ -16,32 +16,41 @@
 
     <h1>Rock, Scissors, Paper !</h1>
 
-    <div class="layout">
-        <div class="side" id="left" style="float: left;">
-            <p>place holder</p>
-        </div>
-        <div class="playground" style="float: left;">
-            <div id="userHand">
-                <input type="image" class="imgToolUser" src="img/rock_a.png" onclick="start(this.id)" id="userRock">
-                <input type="image" class="imgToolUser" src="img/scissors_a.png" onclick="start(this.id)" id="userScissors">
-                <input type="image" class="imgToolUser" src="img/paper_a.png" onclick="start(this.id)" id="userPaper">
+    <div class="playground">
 
+        <div class="cpHand">
+            <div class="who">
+                <p class="whoText">CP</p>
             </div>
-            <p id="vs">
-                VS
-            </p>
-            <div id="CPHand">
+            <div class="icons">
                 <img class="imgToolCp" id="cpRock" src="img/rock_a.png" alt="rock">
                 <img class="imgToolCp" id="cpScissors" src="img/scissors_a.png" alt="scissors">
                 <img class=" imgToolCp" id="cpPaper" src="img/paper_a.png" alt="paper">
             </div>
-
+            <div class="scores">
+                <p class="whoText" id="you">YOU</p>
+            </div>
         </div>
-        <div class="side" id="right" style="float: left;">
-            <p id="placeholder">place holder</p>
+
+        <p id="vs">
+            VS
+        </p>
+
+        <div class="userHand">
+            <div class="who">
+                <p class="whoText" id="you">YOU</p>
+            </div>
+            <div class="icons">
+                <input type="image" class="imgToolUser" src="img/rock_a.png" onclick="start(this.id)" id="userRock">
+                <input type="image" class="imgToolUser" src="img/scissors_a.png" onclick="start(this.id)"
+                    id="userScissors">
+                <input type="image" class="imgToolUser" src="img/paper_a.png" onclick="start(this.id)" id="userPaper">
+            </div>
+            <div class="scores">
+                <p class="whoText" id="you">YOUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU</p>
+            </div>
         </div>
     </div>
-
 
     <script type="text/javascript">
 
@@ -50,41 +59,44 @@
         let currentRound = 0;
         let maxRound = 3;
 
-        
+
 
         function start(clicked) {
 
-            document.getElementById(clicked).style.opacity = "100%";
+
             if (currentRound < maxRound) {
+                document.getElementById(clicked).style.opacity = "100%";
 
                 document.getElementById("userRock").disabled = true;
                 document.getElementById("userScissors").disabled = true;
                 document.getElementById("userPaper").disabled = true;
+
                 cpTurn();
 
                 currentRound++;
 
-                setTimeout(function(){
+                setTimeout(function () {
                     document.getElementById(clicked).style.opacity = "50%";
                     document.getElementById("cpRock").style.opacity = "50%";
                     document.getElementById("cpScissors").style.opacity = "50%";
                     document.getElementById("cpPaper").style.opacity = "50%";
                 }, 1500)
-                
-                setTimeout(function(){
+
+                setTimeout(function () {
                     document.getElementById("userRock").disabled = false;
                     document.getElementById("userScissors").disabled = false;
                     document.getElementById("userPaper").disabled = false;
                 }, 1500)
 
                 if (currentRound > maxRound) {
+
                     console.log("game ended")
                 }
             }
-            else{
+            else {
                 console.log("please restart")
             }
-            
+
 
 
         }
@@ -116,7 +128,7 @@
             document.getElementById(cpHand).style.opacity = "100%";
             return cpHand;
         }
-        
+
 
 
     </script>
