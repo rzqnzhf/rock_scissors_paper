@@ -4,10 +4,7 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
         <title>Rock, Scissors, Paper !</title>
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
@@ -22,24 +19,9 @@
                     <p class="whoText">CP</p>
                 </div>
                 <div class="icons">
-                    <img
-                        class="imgTool"
-                        id="cpRock"
-                        src="img/rock_a.png"
-                        alt="rock"
-                    />
-                    <img
-                        class="imgTool"
-                        id="cpScissors"
-                        src="img/scissors_a.png"
-                        alt="scissors"
-                    />
-                    <img
-                        class="imgTool"
-                        id="cpPaper"
-                        src="img/paper_a.png"
-                        alt="paper"
-                    />
+                    <img class="imgTool" id="cpRock" src="img/rock_a.png" alt="rock" />
+                    <img class="imgTool" id="cpScissors" src="img/scissors_a.png" alt="scissors" />
+                    <img class="imgTool" id="cpPaper" src="img/paper_a.png" alt="paper" />
                 </div>
                 <div class="scores" id="cpScore"></div>
             </div>
@@ -53,50 +35,16 @@
                     <p class="whoText" id="you">YOU</p>
                 </div>
                 <div class="icons">
-                    <input
-                        type="image"
-                        class="imgTool"
-                        src="img/rock_a.png"
-                        onclick="start(this.id)"
-                        value="rock"
-                        id="userRock"
-                    />
-                    <input
-                        type="image"
-                        class="imgTool"
-                        src="img/scissors_a.png"
-                        onclick="start(this.id)"
-                        value="scissors"
-                        id="userScissors"
-                    />
-                    <input
-                        type="image"
-                        class="imgTool"
-                        src="img/paper_a.png"
-                        onclick="start(this.id)"
-                        value="paper"
-                        id="userPaper"
-                    />
+                    <input type="image" class="imgTool userImgTool" src="img/rock_a.png" onclick="start(this.id)" value="rock" id="userRock" />
+                    <input type="image" class="imgTool userImgTool" src="img/scissors_a.png" onclick="start(this.id)" value="scissors" id="userScissors" />
+                    <input type="image" class="imgTool userImgTool" src="img/paper_a.png" onclick="start(this.id)" value="paper" id="userPaper" />
                 </div>
                 <div class="scores" id="userScore"></div>
             </div>
             <div class="settingsButton">
                 <label class="roundSettings">Max Rounds </label>
-                <input
-                    class="roundSettings"
-                    id="maxRoundInput"
-                    type="number"
-                    min="1"
-                    max="10"
-                    value="3"
-                    onchange="restart()"
-                />
-                <input
-                    id="restartSettings"
-                    type="button"
-                    value="Restart"
-                    onclick="restart()"
-                />
+                <input class="roundSettings" id="maxRoundInput" type="number" min="1" max="10" value="3" onchange="restart()" />
+                <input id="restartSettings" type="button" value="Restart" onclick="restart()" />
             </div>
         </div>
 
@@ -131,97 +79,55 @@
                         case "rock":
                             if (cpHand == "paper") {
                                 cpCurrentScore++;
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREEN;
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = RED;
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = GREEN;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = RED;
                                 console.log("CP WIN");
-                            } else if (
-                                cpHand == document.getElementById(clicked).value
-                            ) {
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREY;
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREY;
+                            } else if (cpHand == document.getElementById(clicked).value) {
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = GREY;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = GREY;
                                 currentRound--;
                                 console.log("TIE");
                             } else {
                                 userCurrentScore++;
                                 console.log("USER WIN");
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREEN;
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = RED;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = GREEN;
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = RED;
                             }
                             break;
                         case "scissors":
                             if (cpHand == "rock") {
                                 cpCurrentScore++;
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREEN;
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = RED;
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = GREEN;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = RED;
                                 console.log("CP WIN");
-                            } else if (
-                                cpHand == document.getElementById(clicked).value
-                            ) {
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREY;
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREY;
+                            } else if (cpHand == document.getElementById(clicked).value) {
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = GREY;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = GREY;
                                 currentRound--;
                                 console.log("TIE");
                             } else {
                                 userCurrentScore++;
                                 console.log("USER WIN");
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREEN;
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = RED;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = GREEN;
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = RED;
                             }
                             break;
                         case "paper":
                             if (cpHand == "scissors") {
                                 cpCurrentScore++;
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREEN;
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = RED;
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = GREEN;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = RED;
                                 console.log("CP WIN");
-                            } else if (
-                                cpHand == document.getElementById(clicked).value
-                            ) {
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREY;
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREY;
+                            } else if (cpHand == document.getElementById(clicked).value) {
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = GREY;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = GREY;
                                 currentRound--;
                                 console.log("TIE");
                             } else {
                                 userCurrentScore++;
                                 console.log("USER WIN");
-                                document.getElementById("userScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = GREEN;
-                                document.getElementById("cpScore").childNodes[
-                                    currentRound
-                                ].style.backgroundColor = RED;
+                                document.getElementById("userScore").childNodes[currentRound].style.backgroundColor = GREEN;
+                                document.getElementById("cpScore").childNodes[currentRound].style.backgroundColor = RED;
                             }
                             break;
                     }
@@ -229,26 +135,20 @@
                     currentRound++;
 
                     setTimeout(function () {
-                        document.getElementById(clicked).style.opacity = "50%";
-                        document.getElementById("cpRock").style.opacity = "50%";
-                        document.getElementById("cpScissors").style.opacity =
-                            "50%";
-                        document.getElementById("cpPaper").style.opacity =
-                            "50%";
+                        document.getElementById(clicked).style.opacity = "";
+                        document.getElementById("cpRock").style.opacity = "";
+                        document.getElementById("cpScissors").style.opacity = "";
+                        document.getElementById("cpPaper").style.opacity = "";
                     }, 1000);
 
                     setTimeout(function () {
                         document.getElementById("userRock").disabled = false;
-                        document.getElementById(
-                            "userScissors"
-                        ).disabled = false;
+                        document.getElementById("userScissors").disabled = false;
                         document.getElementById("userPaper").disabled = false;
                     }, 1000);
 
                     if (currentRound >= maxRound) {
-                        document.getElementById(
-                            "maxRoundInput"
-                        ).disabled = false;
+                        document.getElementById("maxRoundInput").disabled = false;
                         console.log("game ended");
                         console.log(userCurrentScore);
                         console.log(cpCurrentScore);
@@ -256,8 +156,7 @@
                             document.getElementById("vs").innerText = "YOU WIN";
                             document.getElementById("vs").style.color = GREEN;
                         } else {
-                            document.getElementById("vs").innerText =
-                                "YOU LOOSE";
+                            document.getElementById("vs").innerText = "YOU LOSE";
                             document.getElementById("vs").style.color = RED;
                         }
                     }
@@ -273,23 +172,19 @@
                     case 0:
                         cpHandId = "cpRock";
                         cpHand = "rock";
-                        document.getElementById("cpScissors").style.opacity =
-                            "50%";
-                        document.getElementById("cpPaper").style.opacity =
-                            "50%";
+                        document.getElementById("cpScissors").style.opacity = "50%";
+                        document.getElementById("cpPaper").style.opacity = "50%";
                         break;
                     case 1:
                         cpHandId = "cpScissors";
                         cpHand = "scissors";
                         document.getElementById("cpRock").style.opacity = "50%";
-                        document.getElementById("cpPaper").style.opacity =
-                            "50%";
+                        document.getElementById("cpPaper").style.opacity = "50%";
                         break;
                     case 2:
                         cpHandId = "cpPaper";
                         cpHand = "paper";
-                        document.getElementById("cpScissors").style.opacity =
-                            "50%";
+                        document.getElementById("cpScissors").style.opacity = "50%";
                         document.getElementById("cpRock").style.opacity = "50%";
                         break;
                 }
@@ -304,25 +199,19 @@
 
                 maxRound = document.getElementById("maxRoundInput").value;
 
-                if (
-                    document.getElementById("userScore").childElementCount > 0
-                ) {
+                if (document.getElementById("userScore").childElementCount > 0) {
                     deleteAllDot();
                 }
 
                 for (i = 0; i < maxRound; i++) {
                     userScoreDot = document.createElement("SPAN");
                     userScoreDot.className = "dot";
-                    document
-                        .getElementById("userScore")
-                        .appendChild(userScoreDot);
+                    document.getElementById("userScore").appendChild(userScoreDot);
                 }
                 for (i = 0; i < maxRound; i++) {
                     userScoreDot = document.createElement("SPAN");
                     userScoreDot.className = "dot";
-                    document
-                        .getElementById("cpScore")
-                        .appendChild(userScoreDot);
+                    document.getElementById("cpScore").appendChild(userScoreDot);
                 }
             }
 
@@ -345,6 +234,8 @@
                 document.getElementById("vs").style.color = "#344955";
                 document.getElementById("vs").innerText = "VS";
                 currentRound = 0;
+                cpCurrentScore = 0;
+                userCurrentScore = 0;
             }
         </script>
     </body>
