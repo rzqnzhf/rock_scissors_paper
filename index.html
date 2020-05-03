@@ -233,6 +233,14 @@
                 }
             }
             function restart() {
+
+                if(document.getElementById("maxRoundInput").value > 10){
+                    document.getElementById("maxRoundInput").value = 10;
+                }
+                if(document.getElementById("maxRoundInput").value < 1){
+                    document.getElementById("maxRoundInput").value = 1;
+                }
+
                 deleteAllDot();
                 refreshDot(maxRound);
                 document.getElementById("maxRoundInput").disabled = false;
