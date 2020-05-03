@@ -5,6 +5,7 @@ body{
     margin: 0;
     
 }
+
 h1{
     background-color: #232F34;
     color: white;
@@ -12,6 +13,7 @@ h1{
     padding: 20px;
     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.7);
 }
+
 .playground{
     display: flex;
     flex-direction: column;
@@ -20,6 +22,7 @@ h1{
     padding: 5%;
 
 }
+
 .hand{
     display: flex;
     width: 100%;
@@ -37,9 +40,19 @@ h1{
     text-align: left;
     width: 25%;
 }
+.dot{
 
-
-
+    height: 20px;
+    width: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(180, 180, 180);
+    background-color: rgb(226, 226, 226);
+    border-radius: 50%;
+    display: inline-block;
+    
+      
+}
 .imgTool{
 
     height: 100px;
@@ -56,14 +69,11 @@ h1{
     outline: none;
 }
 
-
 .imgToolUser:hover{
     cursor: pointer;
     opacity: 75%;
 
 }
-
-
 
 .whoText{
     display: inline;
@@ -73,7 +83,23 @@ h1{
     background-color: brown;
     border-radius: 4px;
 }
-
+.settingsButton{
+    margin: 20px;
+    padding: 20px;
+}
+input{
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+#maxRound{
+    width: 30px;
+    margin: 5px;
+}
+#restartSettings{
+    margin-left: 20px;
+}
 #vs{
     font-size: 50px;
     color: #344955;

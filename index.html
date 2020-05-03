@@ -27,8 +27,8 @@
                 <img class="imgTool" id="cpScissors" src="img/scissors_a.png" alt="scissors">
                 <img class="imgTool" id="cpPaper" src="img/paper_a.png" alt="paper">
             </div>
-            <div class="scores">
-                <p class="whoText" id="you">CP</p>
+            <div class="scores" id="cpScore">
+
             </div>
         </div>
 
@@ -42,13 +42,18 @@
             </div>
             <div class="icons">
                 <input type="image" class="imgTool" src="img/rock_a.png" onclick="start(this.id)" id="userRock">
-                <input type="image" class="imgTool" src="img/scissors_a.png" onclick="start(this.id)"
-                    id="userScissors">
+                <input type="image" class="imgTool" src="img/scissors_a.png" onclick="start(this.id)" id="userScissors">
                 <input type="image" class="imgTool" src="img/paper_a.png" onclick="start(this.id)" id="userPaper">
             </div>
-            <div class="scores">
-                <p class="whoText" id="you">YOU</p>
+            <div class="scores"  id="userScore">
+
             </div>
+        </div>
+        <div class="settingsButton">
+
+            <label class="roundSettings">Max Rounds </label>
+            <input class="roundSettings" id="maxRoundInput" type="number" min="1" max="10" value="3" onchange="refreshDot()">
+            <input id="restartSettings" type="button" value="Restart" onclick="restart()">
         </div>
     </div>
 
@@ -57,9 +62,10 @@
         let cpHand;
         let userHand;
         let currentRound = 0;
-        let maxRound = 3;
+        let maxRound = document.getElementById("maxRoundInput").value;
 
-
+        refreshDot(maxRound);
+        
 
         function start(clicked) {
 
@@ -129,7 +135,46 @@
             return cpHand;
         }
 
+        function refreshDot(maxRound){
 
+            let userScoreDot;
+
+            maxRound = document.getElementById("maxRoundInput").value;
+
+            if(document.getElementById("userScore").childElementCount > 0){
+                deleteAllDot();
+            }            
+        
+            for(i=0; i<maxRound; i++){
+                
+                userScoreDot = document.createElement("SPAN");
+                userScoreDot.className = "dot";
+                document.getElementById("userScore").appendChild(userScoreDot);
+            }
+            
+        }
+
+        function deleteAllDot(){
+
+            console.log("deleting all node");
+
+            let currentDots = document.getElementById("userScore");
+            let currentDotsIds = currentDots.childElementCount;
+
+            console.log("Ids : "+currentDots)
+            console.log("max ID : "+currentDotsIds)
+
+            for(i = currentDotsIds - 1; i>=0; i--){
+
+                currentDots.removeChild(currentDots.childNodes[i]);  
+
+                console.log(i);
+            }
+        }
+        function restart(){
+            deleteAllDot();
+            refreshDot(maxRound);
+        }
 
     </script>
 </body>
