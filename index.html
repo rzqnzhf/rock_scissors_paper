@@ -155,7 +155,12 @@
                         if (userCurrentScore > cpCurrentScore) {
                             document.getElementById("vs").innerText = "YOU WIN";
                             document.getElementById("vs").style.color = GREEN;
-                        } else {
+                        } else if(currentRound == maxRound){
+
+                            document.getElementById("vs").innerText = "IT'S A TIE";
+                            document.getElementById("vs").style.color = GREY;
+                        }
+                        else{
                             document.getElementById("vs").innerText = "YOU LOSE";
                             document.getElementById("vs").style.color = RED;
                         }
